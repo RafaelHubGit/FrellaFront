@@ -1,0 +1,33 @@
+
+
+.whatsApp__container{
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+
+    z-index: 2000;
+
+    background: #4AC757;
+
+    text-decoration: none;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsApp__container span{
+    color: #fff;
+    font-size: 40px;
+}
+
+@media only screen and (max-width: 1090px) {
+    .whatsApp__container{
+        bottom: 40px;
+        right: 20px;
+    }
+}

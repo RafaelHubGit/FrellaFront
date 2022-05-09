@@ -1,0 +1,243 @@
+$light-opaque: #00000083;
+$black-opaque: #000000d7;
+
+
+$light-light: #fff;
+$black-light: #0000000f;
+
+.radioSelect__form {
+	width: 200px;
+	// margin: 100px auto 0;
+}
+
+.radioSelect__container {
+	font-size: 1.25em;
+	position: relative;
+	height: 3em;
+	border: none;
+	margin: 0;
+	padding: 0;
+	&:hover {
+		z-index: 9999;
+	}
+}
+
+.radioSelect__container::after {
+	// content: '';
+    // position: absolute;
+    // bottom: 15px;
+    // right: 10px;
+    // width: 0;
+    // height: 0;
+    // border-left: 10px solid transparent;
+    // border-right: 10px solid transparent;
+    // border-top: 10px solid #f00;
+}
+
+.radioSelect__options-blanco {
+	position: absolute;
+	max-height: 3em;
+	width: 100%;
+	overflow: hidden;
+	transition: 0.7s;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+	text-transform: uppercase;
+	box-shadow: 1px 1px 2px 0px rgba(255, 255, 255, 0.65);
+	.toggle {
+		position: relative;
+		cursor: pointer;
+		padding: .85em;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 10px;
+		z-index: 1;
+        font-size: 20px;
+        font-weight: bold;
+	}
+	ul {
+		margin: 18px 0 0 0;
+		padding: 0; 
+		transition: .5s;
+		// border-bottom: 1px solid #fff;
+	}
+	li {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		list-style: none; 
+	}
+	label {
+		font-size: 20px;
+		display: block;
+		opacity: 0;
+		padding: 0.85em 0;
+        font-size: 25px;
+        font-weight: bold;
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 1;
+		&:checked ~ label {
+			font-size: 20px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			z-index: 2;
+			padding: 0.85em 0;
+			background: rgba(0, 0, 0, 0);
+			border-radius: 10px;
+			width: 100%;
+		}
+	}
+	&:hover {
+		max-height: 100em;
+		ul {
+			position: relative;
+			margin-top: 10px;
+		
+			&:before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			top: -10px;
+			right: 2.5em;
+			border-style: solid;
+			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent $black-opaque transparent;
+			}
+		}
+		li {
+			position: relative;
+		}
+		label {
+			opacity: 1;
+			transition: 0.5s;
+			background: $black-opaque;
+			padding: 0.85em 0;
+			cursor: pointer;
+            font-size:20px;
+			&:hover {
+			color: $primary;
+			background: $light-opaque;
+            font-weight: bold;
+            font-size: 23px;;
+			}
+		}
+		input:checked ~ label {
+			position: static;
+			border-radius: 0;
+		}
+	}
+}
+
+.radioSelect__options-negro {
+	position: absolute;
+	max-height: 3em;
+	width: 100%;
+	overflow: hidden;
+	transition: 0.7s;
+	text-align: center;
+	color: $primary;
+	font-size: 20px;
+	text-transform: uppercase;
+	box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.65);
+	.toggle {
+		position: relative;
+		cursor: pointer;
+		padding: .85em;
+		background: rgba(0, 0, 0, 0);
+		border-radius: 10px;
+		z-index: 1;
+        font-size: 20px;
+        font-weight: bold;
+	}
+	ul {
+		margin: 18px 0 0 0;
+		padding: 0; 
+		transition: .5s;
+		// border-bottom: 1px solid #fff;
+	}
+	li {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		list-style: none; 
+	}
+	label {
+		font-size: 20px;
+		display: block;
+		opacity: 0;
+		padding: 0.85em 0;
+        font-size: 25px;
+        font-weight: bold;
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 1;
+		&:checked ~ label {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 1;
+			z-index: 2;
+			padding: 0.85em 0;
+			background: rgb(255, 255, 255);
+			border-radius: 10px;
+			width: 100%;
+			font-size: 20px;
+		}
+	}
+	&:hover {
+		max-height: 100em;
+		ul {
+			position: relative;
+			margin-top: 10px;
+		
+			&:before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			top: -10px;
+			right: 2.5em;
+			border-style: solid;
+			border-width: 0 10px 10px 10px;
+			border-color: transparent transparent $black-light transparent;
+			}
+		}
+		li {
+			position: relative;
+		}
+		label {
+			opacity: 1;
+			transition: 0.5s;
+			background: $black-light;
+			padding: 0.85em 0;
+			cursor: pointer;
+            font-size:20px;
+			&:hover {
+			color: $primary;
+			background: $light-light;
+            font-weight: bold;
+            font-size: 23px;;
+			}
+		}
+		input:checked ~ label {
+			position: static;
+			border-radius: 0;
+		}
+	}
+}
