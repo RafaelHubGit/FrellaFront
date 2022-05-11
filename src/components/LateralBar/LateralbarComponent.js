@@ -5,7 +5,7 @@ export const LateralbarComponent = () => {
         <div className="lateralbar__container">
 
             <div className="lateralbar__menuIcon">
-                <span className="material-icons md-40 colorTextPrimary">
+                <span className="material-icons md-35 colorTextPrimary">
                     menu
                 </span>
             </div>
@@ -24,11 +24,11 @@ export const LateralbarComponent = () => {
                     <div className="lateralbar__iconTextContainerNumber colorTextPrimary">
                         120
                     </div>
-                    <span className="material-icons md-33 colorTextPrimary">
+                    <span className="material-icons md-25 colorTextPrimary">
                         shopping_bag
                     </span>
                     <p className="colorTextPrimary">
-                        $ 9500.00
+                        $ 80358.00
                     </p>
                 </div>
             </div>

@@ -8,3 +8,28 @@
     
     position: relative;
 }
+
+
+.general__carouselContainer{
+    height: 100%;
+}
+.carousel-inner{
+    height: 100%;
+}
+.carousel-item{
+    height: 100%;
+}
+.general__CarouselImg{
+    // background-image: url('https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/aceite2.jpg?alt=media&token=234a3e18-6e93-4f0a-9c2a-0ad83de6719b');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.carousel-caption h2, .carousel-caption p{
+    background: #0000008a;
+}
+.carousel-caption p{
+    font-size: 22px;
+}
