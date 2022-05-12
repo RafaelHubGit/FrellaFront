@@ -4,3 +4,14 @@
     position: relative;
     height: 450px;
 }
+
+.mainScreen__IconFrellaContainer{
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mainScreen__IconFrellaContainer img{
+    width: 200px;
+}
