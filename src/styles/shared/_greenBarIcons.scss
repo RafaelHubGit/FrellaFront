@@ -4,8 +4,18 @@
 .greenBarIcons__Container{
     position: relative;
     width: 100%;
-    height: 150px;
+    height: 180px;
     background-color: $primary;
+
+    display: flex;
+    align-items: center;
+}
+
+.greenBarIcons__Wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 }
 
 
@@ -27,4 +37,22 @@
     align-items: center;
     border: 3px solid #fff;
     color: #fff;
+}
+
+.greenBarIcons__textIconContainer{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.greenBarIcons__whiteLine{
+    width: 100px;
+    background: #fff;
+    height: 2px;
+}
+.greenBarIcons__textIconContainer p{
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
 }
