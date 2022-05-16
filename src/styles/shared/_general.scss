@@ -33,3 +33,27 @@
 .carousel-caption p{
     font-size: 22px;
 }
+
+
+.mainScreen__parallaxContainer{
+    margin-top: 30px;
+}
+////////////////////////////////////////////////////////////////////////////777
+// PARALLAX INICIO
+////////////////////////////////////////////////////////////////////////////777
+.general__parallax {
+    /* The image used */
+    // background-image: url("https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/aceite2.jpg?alt=media&token=234a3e18-6e93-4f0a-9c2a-0ad83de6719b");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+////////////////////////////////////////////////////////////////////////////777
+// PARALLAX FIN
+////////////////////////////////////////////////////////////////////////////777
