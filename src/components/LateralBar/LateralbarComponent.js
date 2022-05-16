@@ -1,4 +1,5 @@
 import React from 'react'
+import { LogoComponent } from '../Logo/LogoComponent'
 
 export const LateralbarComponent = () => {
     return (
@@ -34,12 +35,14 @@ export const LateralbarComponent = () => {
             </div>
 
 
-            <div className="lateralbar__frellaNatContainer">
+            <LogoComponent rotate="-90" />
+
+            {/* <div className="lateralbar__frellaNatContainer">
                 <div className="lateralbar__frellaNatWrapp">
                     <p className="lateralbar__frella">FRELLA</p>
                     <p className="lateralbar__natural">NATURAL</p>
                 </div>
-            </div>
+            </div> */}
 
             <div className="lateralbar__iconsSocial">
                 <i className="fa-brands fa-facebook-f colorTextPrimary"></i>

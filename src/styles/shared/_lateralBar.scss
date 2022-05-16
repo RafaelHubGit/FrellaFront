@@ -3,7 +3,7 @@
 .lateralbar__container{
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: grid;
     grid-template-rows: 60px 190px 1fr 190px;
@@ -46,32 +46,34 @@
     font-size: 19px;
 }
 
-.lateralbar__frellaNatContainer{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    position: relative;
+// .lateralbar__frellaNatContainer{
+//     display: flex;
+//     align-items: center;
+//     align-content: center;
+//     width: 100%;
+//     position: relative;
 
-    display: flex;
-    justify-content: center;
-}
+//     display: flex;
+//     justify-content: center;
+// }
 
-.lateralbar__frellaNatWrapp {
-    transform: rotate(-90deg);
-    position: fixed;
-}
-.lateralbar__frella{
-    font-size: 28px;
-    letter-spacing: 8px;
-}
-.lateralbar__natural {
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-top: -8px;
-    position: relative;
-    left: 80px;
-}
+// .lateralbar__frellaNatWrapp {
+//     transform: rotate(-90deg);
+//     position: absolute;
+// }
+// .lateralbar__frella{
+//     font-size: 28px;
+//     letter-spacing: 8px;
+// }
+// .lateralbar__natural {
+//     font-size: 12px;
+//     letter-spacing: 3px;
+//     margin-top: -8px;
+//     position: relative;
+//     left: 80px;
+// }
+
+
 
 .lateralbar__iconsSocial{
     font-size: 25px;
