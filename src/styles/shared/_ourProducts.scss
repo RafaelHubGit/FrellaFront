@@ -1,5 +1,24 @@
 
 
+.ourProducts__ScreenContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ourProducts__ScreenContainer h3{
+    margin-bottom: 50px;
+
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+.ourProducts__ourProductsContainer{
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+
+
 
 
 .ourProducts__CardContainer{
@@ -10,6 +29,9 @@
     // display: grid;
     // grid-template-columns: 1fr 1fr;
     display: flex;
+
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .ourProducts__CardContainerReverse{ //Solo se usa para intercalar la imagen del texto
