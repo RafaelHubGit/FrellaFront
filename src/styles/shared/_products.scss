@@ -1,0 +1,53 @@
+
+
+.products__envioGratis{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background: $primary;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.products__imageBanner{
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/aceites.jpeg?alt=media&token=37e7473d-62c7-47c5-9f07-53e91c1600fd");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+}
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//Producto card
+/////////////////////////////////////////////////////////////////////////////
+
+.products__productCardContainer{
+    width: 185px;
+    height: 240px;
+
+    background-color: red;
+}
+.products__productCardImage{
+    width: 100%;
+    height: 75%;
+
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/aceites.jpeg?alt=media&token=37e7473d-62c7-47c5-9f07-53e91c1600fd");
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.products__productCardPrice{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
