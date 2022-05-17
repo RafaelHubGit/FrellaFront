@@ -5,8 +5,8 @@ import { MainScreen } from './MainScreen'
 
 export const MainComponent = () => {
     return (
-        <div className="general__container">
-            <LateralbarComponent />
+        <div className="mainScreen__ContainerGeneral">
+            {/* <LateralbarComponent /> */}
             <MainScreen />
         </div>
     )
