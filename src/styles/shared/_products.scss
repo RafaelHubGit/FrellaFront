@@ -1,4 +1,6 @@
-
+.products__productsScreenContainer{
+    overflow: auto;
+}
 
 .products__envioGratis{
     display: flex;
@@ -21,6 +23,14 @@
     height: 300px;
 }
 
+.products__productsWrap{
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+
+    padding:30px;
+}
 
 
 
@@ -31,23 +41,129 @@
 /////////////////////////////////////////////////////////////////////////////
 
 .products__productCardContainer{
-    width: 185px;
-    height: 240px;
+    width: 175px;
+    height: 278px;
 
-    background-color: red;
+    margin: 20px;
+
+    position: relative;
+
+    // transition: all 1s;
+    // overflow: hidden;
 }
+
+.products__productCardDiscount{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -17px;
+    right: -17px;
+    background: $red;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #fff;
+
+    z-index: 2; //se pone para que se sobre ponga al div de la imagen products__productCardImage
+}
+
 .products__productCardImage{
     width: 100%;
-    height: 75%;
+    height: 225px;
 
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/aceites.jpeg?alt=media&token=37e7473d-62c7-47c5-9f07-53e91c1600fd");
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/prueba-32329.appspot.com/o/sincerely-media-UmDfdonflT0-unsplash.jpg?alt=media&token=47d98996-9fb7-47a7-ba19-5660e11343b8");
     background-size: cover ;
     background-repeat: no-repeat;
     background-position: center;
+
+    position: relative;
+
+    // transition: all 1s;
+    overflow: hidden;
+    z-index: 1; //Se pone para que quede debajo del discount products__productCardDiscount
+}
+.products__productCardImage:before{
+    content: "Ver más...";
+    background: $primary;
+    width: 100%;
+    height: 35px;
+
+    position: absolute;
+    bottom: -35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+
+    z-index: 2; //Se pone en 2 uya que el letrero products__productCardInfo va en 1 para que este se sobreponga
+
+    transform: translateY(0);
+    transition: all 1s;
+    
+}
+.products__productCardContainer:hover .products__productCardImage:before{
+    transform: translateY(-35px);
+}
+.products__productCardContainer:hover .products__productCardImage:before{ //Con este se esta controlando la transicion al hacer hover sobre el padre products__productCardContainer
+    transform: translateY(-35px);
 }
 
+
+
+.products__productCardInfo{
+    background: $primary;
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1; //Va en 1 para que el before products__productCardImage se ponga frente a este
+}
+
+.products_productCardIngredients{
+    position: absolute;
+    bottom: 0px;
+    background: #00000047;
+    width: 100%;
+    height: 35px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.products__productCardData h5{
+    color: $titulos;
+    font-weight: 600;
+}
 .products__productCardPrice{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.products__productCardHighPrice{
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 16px;
+    margin-right: 10px;
+    color: $titulos;
+}
+.products__productCardLowPrice{
+    font-size: 18px;
+    font-weight: 600;
+    color: $titulos;
 }

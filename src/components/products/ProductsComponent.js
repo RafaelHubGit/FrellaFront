@@ -9,8 +9,13 @@ export const ProductsComponent = () => {
 
         <h5> PRODUCTOS </h5>
 
-        <div>
+        <div className="products__productsWrap">
 
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
             <ProductComponent />
 
         </div>
