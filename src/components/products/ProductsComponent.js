@@ -7,7 +7,7 @@ export const ProductsComponent = () => {
     <div>
         <div className="products__imageBanner general__parallax"></div>
 
-        <h5> PRODUCTOS </h5>
+        <h1 className="products__titleProducts"> PRODUCTOS </h1>
 
         <div className="products__productsWrap">
 
@@ -17,6 +17,38 @@ export const ProductsComponent = () => {
             <ProductComponent />
             <ProductComponent />
             <ProductComponent />
+
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+            <ProductComponent />
+
 
         </div>
 

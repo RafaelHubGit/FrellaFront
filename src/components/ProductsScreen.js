@@ -1,4 +1,5 @@
 import React from 'react'
+import { FooterScreen } from './footer/FooterScreen'
 import { ProductsComponent } from './products/ProductsComponent'
 
 export const ProductsScreen = () => {
@@ -10,6 +11,8 @@ export const ProductsScreen = () => {
         <div>
             <ProductsComponent/>
         </div>
+
+        <FooterScreen />
 
     </div>
   )

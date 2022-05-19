@@ -1,8 +1,9 @@
 import React from 'react'
+import { ProductModalComponent } from './ProductModalComponent'
 
 export const ProductComponent = () => {
   return (
-    <div className="products__productCardContainer pointer">
+    <div className="products__productCardContainer pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
         <div className="products__productCardDiscount">-25%</div>
         <div className="products__productCardImage">
             <div className="products__productCardInfo">Nuevo</div>
@@ -19,6 +20,8 @@ export const ProductComponent = () => {
                 </p>
             </div>
         </div>
+
+        <ProductModalComponent />
     </div>
   )
 }
