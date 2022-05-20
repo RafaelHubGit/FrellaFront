@@ -1,6 +1,7 @@
 // No se pone el titulo en el inicio ya que todo eso se va a obtener del state
 import React from 'react'
 import { ProductComponent } from './ProductComponent'
+import { ProductModalComponent } from './ProductModalComponent'
 
 export const ProductsComponent = () => {
   return (
@@ -51,6 +52,8 @@ export const ProductsComponent = () => {
 
 
         </div>
+
+        <ProductModalComponent />
 
 
     </div>

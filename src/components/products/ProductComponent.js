@@ -1,5 +1,4 @@
 import React from 'react'
-import { ProductModalComponent } from './ProductModalComponent'
 
 export const ProductComponent = () => {
   return (
@@ -21,7 +20,6 @@ export const ProductComponent = () => {
             </div>
         </div>
 
-        <ProductModalComponent />
     </div>
   )
 }

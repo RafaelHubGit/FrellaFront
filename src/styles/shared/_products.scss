@@ -61,7 +61,8 @@
 
     margin: 20px;
 
-    position: relative;
+    // position: relative;
+    position: sticky; //se pone sticky ya que si no se sobre pone al modal
 
     // transition: all 1s;
     // overflow: hidden;
@@ -281,11 +282,20 @@
 
 
 // ACORDION!!!!!!!!!!!!!!!!!!!!!!!!
+.accordion-button:focus{
+    box-shadow: none;
+}
 .accordion-button:not(.collapsed){
     color: $primary;
     font-weight: 700;
     background-color: transparent;
     // box-shadow: none;
+}
+.accordion-button:after{
+    background-image: url('../../icons/add.png');
+}
+.accordion-button:not(.collapsed)::after{
+    background-image: url('../../icons/remove.png');
 }
 .accordion-button:after{
     color: $primary;
