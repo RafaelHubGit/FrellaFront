@@ -9,6 +9,7 @@ import {
 import { LateralbarComponent } from '../components/LateralBar/LateralbarComponent';
 import { MainComponent } from '../components/MainComponent';
 import { ProductsScreen } from '../components/ProductsScreen';
+import { PurchaseScreen } from '../components/PurchaseScreen';
 
 export const AppRouter = () => {
 
@@ -23,6 +24,9 @@ export const AppRouter = () => {
                     </Route>
                     <Route path="/products">
                         <ProductsScreen />
+                    </Route>
+                    <Route path="/purchase">
+                        <PurchaseScreen />
                     </Route>
 
                     <Redirect to="/main" />
