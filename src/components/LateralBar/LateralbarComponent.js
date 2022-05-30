@@ -1,4 +1,5 @@
 import React from 'react'
+import { LoginRegisterModal } from '../loginRegister/LoginRegisterModal'
 import { LogoComponent } from '../Logo/LogoComponent'
 import { MenuComponent } from '../menu/MenuComponent'
 
@@ -18,7 +19,7 @@ export const LateralbarComponent = () => {
                         login
                     </span>
                     <p className="colorTextPrimary">
-                        LogIn
+                        Cuenta
                     </p>
                 </div>
 
@@ -52,6 +53,7 @@ export const LateralbarComponent = () => {
 
 
             <MenuComponent />
+            <LoginRegisterModal />
 
         </div>
     )
