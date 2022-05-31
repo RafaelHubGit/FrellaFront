@@ -1,5 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal';
+import { LoginComponent } from './LoginComponent';
+import { RegisterComponent } from './RegisterComponent';
 
 const customStyles = {
     content : {
@@ -71,43 +73,10 @@ export const LoginRegisterModal = ({ isOpen=true, closeFnc }) => {
         </div>
 
         <div className="loginReg__ModalBody">
-            <div className="loginReg__LoginHeader">
-                <h3> Inicio de sesión </h3>
+            
+            {/* <LoginComponent /> */}
 
-                <div className="loginReg__IconsSocial">
-                    <i className="fa-brands fa-google iconRed"></i>
-                    <i className="fa-brands fa-facebook-f iconBlue"></i>
-                </div>
-            </div>
-            <div className="loginReg__formLoginContainer">
-                <div className="input-group mb-3 loginReg__InputLogin">
-                    <span className="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
-                </div>
-                <div className="input-group mb-3 loginReg__InputLogin">
-                    <span className="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" />
-                </div>
-
-            </div>
-            <div className="loginReg__iniciarLogin">
-                <div className="form-check">
-                    <input className="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-                    <label className="form-check-label" htmlFor="defaultCheck1">
-                        Recordar mi contraseña
-                    </label>
-                </div>
-                <button>
-                    Iniciar sesión
-                </button>
-            </div>
-            <div className="loginReg__LogincreateContainer">
-
-                <h6>Crear Cuenta</h6>
-
-                <h6> Olvidé mi contraseña </h6>
-
-            </div>
+            <RegisterComponent />
 
         </div>
     </Modal>

@@ -5,23 +5,34 @@
 
     height: calc(100% - 30px);
 
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// Login
+////////////////////////////////////////////////////////////////////////////////////
+.loginReg__LoginContainer{
+    height: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
-
 .loginReg__LoginHeader{
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
+
+    font-weight: 700;
+    color: $titulos;
 }
-.loginReg__IconsSocial{
+.loginReg__LoginIconsSocial{
     display: flex;
     align-items: center;
 }
-.loginReg__IconsSocial i{
-    padding-right: 20px;
+.loginReg__LoginIconsSocial i{
+    // padding-right: 20px;
 }
 .iconRed{
     color: #DE4032;
@@ -50,14 +61,23 @@
     // margin-top: 30px;
 }
 .loginReg__iniciarLogin button{
-    color: #fff;
+    // color: #fff;
+    // border: none;
+    // background: $primary;
+
+    margin-top: 15px;
+
+    // width: 115px;
+    // height: 35px;
+
     border: none;
-    background: $primary;
-
-    margin-top: 10px;
-
-    width: 115px;
-    height: 35px;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    font-size: 17px;
+    background: #00c318;
+    margin-bottom: 7px;
 }
 .loginReg__LogincreateContainer{
     // margin-top: 30px;
@@ -65,3 +85,72 @@
     flex-direction: column;
     align-items: center;
 }
+
+.loginReg__crearCuenta{
+    font-weight: 600;
+    color: #0e5df9;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// Login fin
+////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////
+// Register
+////////////////////////////////////////////////////////////////////////////////////
+.loginReg__RegisterContainer{
+    height: 100%;
+    // display: grid;
+    // grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.loginReg__RegisterHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+    color: $titulos;
+
+    margin-bottom: 15px;
+}
+
+
+.loginReg__birthdayWrap{
+    margin-top: 5px;
+    display: flex;
+}
+.loginReg__birthdayWrap select{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.loginReg__sexoContainer{
+    margin-top: 15px;
+}
+.loginReg__sexoWrap{
+    margin-top: 5px;
+}
+
+.loginReg__RegisterBtnWrap{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginReg__RegisterBtnWrap button{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+    color: #fff;
+    font-size: 17px;
+    background: #00c318;
+    margin-bottom: 7px;
+}
+.loginReg__RegisterBtnWrap h6{
+    color: #0f16f4;
+}
+////////////////////////////////////////////////////////////////////////////////////
+// Register fin
+////////////////////////////////////////////////////////////////////////////////////
