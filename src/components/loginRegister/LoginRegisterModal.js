@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Modal from 'react-modal';
 import { LoginComponent } from './LoginComponent';
 import { RegisterComponent } from './RegisterComponent';
@@ -50,6 +50,19 @@ const styles = {
 }
 
 export const LoginRegisterModal = ({ isOpen=true, closeFnc }) => {
+
+    const [selLogReg, setSelLogReg] = useState( "log" );
+
+    const handleSetLogReg = ( selection ) => {
+
+        console.log('a ver : ', selection);
+        if ( selLogReg === 'log' ){
+            setSelLogReg( 'reg' );
+        } else {
+            setSelLogReg( 'log' );
+        }
+    }
+
   return (
     <Modal
         isOpen={ isOpen }
@@ -73,10 +86,20 @@ export const LoginRegisterModal = ({ isOpen=true, closeFnc }) => {
         </div>
 
         <div className="loginReg__ModalBody">
+
+            {
+                selLogReg === 'log' 
+                    ?   <LoginComponent
+                            selLogReg= { setSelLogReg }
+                        />
+                    :   <RegisterComponent
+                            selLogReg= { setSelLogReg }
+                        />
+            }
             
             {/* <LoginComponent /> */}
 
-            <RegisterComponent />
+            {/* <RegisterComponent /> */}
 
         </div>
     </Modal>

@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LoginRegisterModal } from '../loginRegister/LoginRegisterModal'
 import { LogoComponent } from '../Logo/LogoComponent'
 import { MenuComponent } from '../menu/MenuComponent'
 
 export const LateralbarComponent = () => {
+
+    const [openModal, setOpenModal] = useState(true);
+
+    const handleCloseModal = () => {
+        setOpenModal( false )
+    }
+
+    const handleOpenModal = () => {
+        setOpenModal( true )
+    }
+
     return (
         <div className="lateralbar__container">
 
@@ -14,7 +25,8 @@ export const LateralbarComponent = () => {
             </div>
 
             <div>
-                <div className="lateralbar__iconTextContainer">
+                <div onClick={ handleOpenModal }
+                    className="lateralbar__iconTextContainer pointer">
                     <span className="material-icons-round iconSize-30 colorTextPrimary pointer">
                         login
                     </span>
@@ -53,7 +65,7 @@ export const LateralbarComponent = () => {
 
 
             <MenuComponent />
-            <LoginRegisterModal />
+            <LoginRegisterModal isOpen={ openModal } closeFnc={ handleCloseModal }/>
 
         </div>
     )

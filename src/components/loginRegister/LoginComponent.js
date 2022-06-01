@@ -1,6 +1,11 @@
 import React from 'react'
 
-export const LoginComponent = () => {
+export const LoginComponent = ({ selLogReg }) => {
+
+    const changeLogReg = () => {
+        selLogReg( 'reg' );
+    }
+
   return (
     <div className="loginReg__LoginContainer">
         <div className="loginReg__LoginHeader">
@@ -35,7 +40,7 @@ export const LoginComponent = () => {
         </div>
         <div className="loginReg__LogincreateContainer">
 
-            <h6 className="loginReg__crearCuenta">Crear Cuenta</h6>
+            <h6 onClick={ changeLogReg } className="loginReg__crearCuenta pointer">Crear Cuenta</h6>
 
             <h6> Olvidé mi contraseña </h6>
 
