@@ -6,6 +6,7 @@ import {
     Switch,
     Redirect
   } from "react-router-dom";
+import { CuentaScreen } from '../components/CuentaScreen';
 import { LateralbarComponent } from '../components/LateralBar/LateralbarComponent';
 import { MainComponent } from '../components/MainComponent';
 import { ProductsScreen } from '../components/ProductsScreen';
@@ -27,6 +28,9 @@ export const AppRouter = () => {
                     </Route>
                     <Route path="/purchase">
                         <PurchaseScreen />
+                    </Route>
+                    <Route path="/account">
+                        <CuentaScreen /> 
                     </Route>
 
                     <Redirect to="/main" />

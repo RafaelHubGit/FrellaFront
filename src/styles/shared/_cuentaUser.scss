@@ -1,0 +1,51 @@
+
+.cuentaUser__container{
+    display: flex;
+    justify-content: center;
+}
+.cuentaUser__wrapper{
+    width: 95%;
+    margin-top: 30px;
+}
+
+.cuentaUser__contentHeight{
+    height: calc(100% - 70px);
+}
+
+.cuentaUser__pedidoContainer{
+    margin-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.cuentaUser__searchInput{
+    width: 300px;
+}
+
+.tdHeight{
+    height: 63px;
+}
+
+.cuentaUser__tdFecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cuentaUser__fechaWrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cuentaUser__fechaText{
+    font-weight: 500;
+}
+.cuentaUser__fechaDate{
+    font-weight: 600;
+}
+
+.cuentaUser__productosWrap{
+    height: 46px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}

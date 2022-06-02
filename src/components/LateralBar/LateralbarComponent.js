@@ -5,7 +5,7 @@ import { MenuComponent } from '../menu/MenuComponent'
 
 export const LateralbarComponent = () => {
 
-    const [openModal, setOpenModal] = useState(true);
+    const [openModal, setOpenModal] = useState( false );
 
     const handleCloseModal = () => {
         setOpenModal( false )
