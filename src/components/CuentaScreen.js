@@ -1,4 +1,5 @@
 import React from 'react'
+import { ActualizaDatosComponent } from './cuentaUsuario/ActualizaDatosComponent'
 import { PedidosComponent } from './cuentaUsuario/PedidosComponent'
 
 export const CuentaScreen = () => {
@@ -17,7 +18,12 @@ export const CuentaScreen = () => {
                 <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabIndex="0">
                     <PedidosComponent />
                 </div>
-                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabIndex="0">...</div>
+                <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabIndex="0">
+                    <div>
+                        <ActualizaDatosComponent />
+                        <div>holi</div>
+                    </div>
+                </div>
                 <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabIndex="0">...</div>
                 <div className="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabIndex="0">...</div>
             </div>
