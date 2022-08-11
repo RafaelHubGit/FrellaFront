@@ -1,5 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { prodCloseModal } from '../../actions/product';
 
 const customStyles = {
     content : {
@@ -46,9 +48,17 @@ const styles = {
 }
 
 export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
+
+    const dispatch = useDispatch();
+    const { openModal } = useSelector( state => state.product)
+
+    const closeModal = () => {
+        dispatch( prodCloseModal() );
+    }
+
   return (
     <Modal
-        isOpen={ false }
+        isOpen={ openModal }
         //   onRequestClose={ closeModal }
         style={ customStyles }
         closeTimeoutMS={ 200 }
@@ -61,7 +71,7 @@ export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
                     type="button" 
                     className="btn btn-danger"
                     style={ styles.alignButton }
-                    onClick={ closeFnc }
+                    onClick={ closeModal }
                 >
                     X
                 </button>
@@ -98,7 +108,7 @@ export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
                 </div>
                 
                 
-                <div className="accordion" id="accordionExample">
+                <div className="accordion productAccordionContainer" id="accordionExample">
                     <div className="accordion-item product__ModalAccordionItem">
                         <h2 className="accordion-header" id="headingOne">
                             <button className="accordion-button product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">

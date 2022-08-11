@@ -5,4 +5,7 @@ export const types = {
     uiRemoveError: '[UI] Remove Error',
     uiStartLoading: '[UI] Start Loading',
     uiFinishLoading: '[UI] Finish Loading',
+
+    productOpenModal: '[Product] Open Modal Product',
+    productCloseModal: '[Product] Close Modal Product'
 }

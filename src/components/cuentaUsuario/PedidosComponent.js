@@ -31,6 +31,10 @@ export const PedidosComponent = () => {
                                 <small className="cuentaUser__fechaDate"> 01/Enero/2022 </small>
                             </div>
                             <div className="cuentaUser__fechaWrap mt-1">
+                                <small className="cuentaUser__fechaText">Pagado : </small>
+                                <small className="cuentaUser__fechaDate" > 01/Enero/2022 </small>
+                            </div>
+                            <div className="cuentaUser__fechaWrap mt-1">
                                 <small className="cuentaUser__fechaText">Entregado : </small>
                                 <small className="cuentaUser__fechaDate" > 01/Enero/2022 </small>
                             </div>

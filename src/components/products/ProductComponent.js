@@ -1,8 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { prodOpenModal } from '../../actions/product';
 
 export const ProductComponent = () => {
+
+    const dispatch = useDispatch();
+
+    const openModalFn = () => {
+        dispatch( prodOpenModal() );
+    }
+
   return (
-    <div className="products__productCardContainer pointer" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <div 
+        className="products__productCardContainer pointer" 
+        onClick={ openModalFn }
+    >
         <div className="products__productCardDiscount">-25%</div>
         <div className="products__productCardImage">
             <div className="products__productCardInfo">Nuevo</div>
