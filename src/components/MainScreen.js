@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { CarouselComponent } from './carousel/CarouselComponent'
 import { FooterScreen } from './footer/FooterScreen'
 import { FrellaIconComponent } from './main/frellaBigLogo/FrellaIconComponent'
@@ -8,6 +9,7 @@ import { NuestrosProductosScreen } from './main/nuestrosProductos/NuestrosProduc
 import { PrallaxComponent } from './Parallax/PrallaxComponent'
 
 export const MainScreen = () => {
+
   return (
     <div className="mainScreen__ContainerGeneral">
         <div className="mainScreen__carouselContainer">

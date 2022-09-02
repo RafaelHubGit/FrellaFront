@@ -7,5 +7,8 @@ export const types = {
     uiFinishLoading: '[UI] Finish Loading',
 
     productOpenModal: '[Product] Open Modal Product',
-    productCloseModal: '[Product] Close Modal Product'
+    productCloseModal: '[Product] Close Modal Product',
+
+
+    loadData: '[Data] Carga toda la informacion',
 }
