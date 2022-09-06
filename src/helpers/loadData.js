@@ -18,7 +18,7 @@ export const getCollection = async ( ruta = '' ) => {
     itemSnap.forEach((doc) => {
         data.push({
             id: doc.id,
-            data: doc.data
+            data: doc.data()
         });
     });
 

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { prodCloseModal } from '../../actions/product';
+import { prodCloseModal, productSelected as prodSelectFnc } from '../../actions/product';
 
 const customStyles = {
     content : {
@@ -47,13 +47,46 @@ const styles = {
     }
 }
 
-export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
+export const ProductModalComponent = () => { 
 
     const dispatch = useDispatch();
-    const { openModal } = useSelector( state => state.product)
+    const { openModal, productSelected, uso, cuidados, ingredientes } = useSelector( state => state.product);
+    const [USO, setUSO] = useState("");
+    const [CUIDADOS, setCUIDADOS] = useState("");
+    const [LISTINGREDIENTS, setLISTINGREDIENTS] = useState([]);
+
+    
+    // useEffect(() => {
+
+        
+    //     if ( ingredientes.lenght > 0 ) {
+    //         
+    //     }
+        
+    // }, [ingredientes, productSelected])
+    
+    useEffect(() => {
+        if ( openModal ){
+            setUSO( uso.find( item => item.id === productSelected.tipoProducto ).data.descripcion );
+            setCUIDADOS( cuidados.find( item => item.id === productSelected.tipoProducto ).data.descripcion );
+
+            const list = ingredientes.filter( item =>  item.id === productSelected.ingredientes.find( ingr => ingr === item.id )); 
+            
+                setLISTINGREDIENTS( list );
+                console.log( "la lista  : ", LISTINGREDIENTS )
+        }
+    }, [openModal, ingredientes, productSelected, cuidados, uso])
+
+    const imageStyle = {
+        backgroundImage: `url(${ productSelected.urlImagen })`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+    };
 
     const closeModal = () => {
         dispatch( prodCloseModal() );
+        dispatch( prodSelectFnc( {} ) );
     }
 
   return (
@@ -81,21 +114,21 @@ export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
 
         <div className=" product__ModalBody">
             <div className="product__ModalimageDescWrap">
-                <div className="product__ModalImage">
+                <div className="product__ModalImage" style={ imageStyle }>
 
                 </div>
                 <div className="product__ModalDescripcion">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt mollitia eaque adipisci officiis magni quos aperiam temporibus tempore aut exercitationem, quaerat, officia harum laboriosam expedita distinctio delectus quis earum ratione.
+                        { productSelected.descripcion }
                     </p>       
                 </div>
             </div>
             <div className="product__ModalDetalleWrap">
                 <div>
-                    <h4 className="product__ModalNombreProd"> Nombre del Producto </h4>
+                    <h4 className="product__ModalNombreProd"> { productSelected.nombre } </h4>
                     <div className="product__ModalPriceWrap">
-                        <small className="product__ModalhighPrice"> $ 350.85 </small>
-                        <small className="product__ModalLowPrice"> $ 250.00 </small>
+                        <small className="product__ModalhighPrice"> $ { productSelected.precioBase } </small>
+                        <small className="product__ModalLowPrice"> $ { productSelected.precioBase - ( productSelected.precioBase * productSelected.descuento / 100 ) } </small>
                     </div>
                     <div className="product__ModalQuantityWrap">
                         <small> Cantidad </small>
@@ -111,25 +144,28 @@ export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
                 <div className="accordion productAccordionContainer" id="accordionExample">
                     <div className="accordion-item product__ModalAccordionItem">
                         <h2 className="accordion-header" id="headingOne">
-                            <button className="accordion-button product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Informacion del producto
-                            </button>
-                        </h2>
-                        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div className="accordion-body product__ModalAccordionBody">
-                                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                            </div>
-                        </div>
-                    </div>
-                    <div className="accordion-item product__ModalAccordionItem">
-                        <h2 className="accordion-header" id="headingTwo">
-                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                             Lista de Ingredientes
                         </button>
                         </h2>
-                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div className="accordion-body product__ModalAccordionBody">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            {
+                                // LISTINGREDIENTS.id.slice(0, -1)
+                                // console.log("putaaa : ", LISTINGREDIENTS.id)
+                            }
+                        </div>
+                        </div>
+                    </div>
+                    <div className="accordion-item product__ModalAccordionItem">
+                        <h2 className="accordion-header" id="headingFive">
+                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Ingredientes Clave
+                        </button>
+                        </h2>
+                        <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div className="accordion-body product__ModalAccordionBody">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                         </div>
                     </div>
@@ -141,35 +177,48 @@ export const ProductModalComponent = ({ isOpen=true, closeFnc }) => {
                         </h2>
                         <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div className="accordion-body product__ModalAccordionBody">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            { USO }
                         </div>
                         </div>
                     </div>
                     <div className="accordion-item product__ModalAccordionItem">
-                        <h2 className="accordion-header" id="headingThree">
-                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <h2 className="accordion-header" id="headingFour">
+                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Cuidados
+                        </button>
+                        </h2>
+                        <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div className="accordion-body product__ModalAccordionBody">
+                            { CUIDADOS }
+                        </div>
+                        </div>
+                    </div>
+                    
+                    {/* <div className="accordion-item product__ModalAccordionItem">
+                        <h2 className="accordion-header" id="headingFour">
+                        <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             Ingredientes Clave
                         </button>
                         </h2>
-                        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="headingFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div className="accordion-body product__ModalAccordionBody">
                             <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="accordion-item product__ModalAccordionItem">
-                        <h2 className="accordion-header" id="headingThree">
+                {/* <div className="accordion-item product__ModalAccordionItem">
+                        <h2 className="accordion-header" id="headingFive">
                         <button className="accordion-button collapsed product__ModalAccordionButton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Cuidados
                         </button>
                         </h2>
-                        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div id="headingFive" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                         <div className="accordion-body product__ModalAccordionBody">
                             <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                         </div>
-                </div>
+                </div> */}
                 
             </div>
         </div>

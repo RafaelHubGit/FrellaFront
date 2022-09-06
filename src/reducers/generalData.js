@@ -15,11 +15,10 @@ const initialState = {
 
 
 export const generalReducer = ( state = initialState, action ) => {
-
     switch ( action.type ){
-        case types.loadData:
+        case types.loadDataMain:
             return {
-                ...action.payload
+                main: action.payload
             }
         default:
             return state;

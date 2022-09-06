@@ -1,13 +1,21 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { prodOpenModal } from '../../actions/product';
+import { prodOpenModal, productSelected } from '../../actions/product';
 
-export const ProductComponent = () => {
+export const ProductComponent = ({ producto }) => {
+
+    const imageStyle = {
+        backgroundImage: `url(${ producto.urlImagen })`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+    };
 
     const dispatch = useDispatch();
 
     const openModalFn = () => {
         dispatch( prodOpenModal() );
+        dispatch( productSelected( producto ) );
     }
 
   return (
@@ -15,19 +23,19 @@ export const ProductComponent = () => {
         className="products__productCardContainer pointer" 
         onClick={ openModalFn }
     >
-        <div className="products__productCardDiscount">-25%</div>
-        <div className="products__productCardImage">
-            <div className="products__productCardInfo">Nuevo</div>
-            <div className="products_productCardIngredients"> avena, toronja, cafe. manzana, kiwi, fresa, bergamota, arandano  </div>
+        <div className="products__productCardDiscount">-{ producto.descuento }</div>
+        <div className="products__productCardImage" style={ imageStyle }>
+            <div className="products__productCardInfo">{ producto.etiqueta }</div>
+            <div className="products_productCardIngredients"> { producto.productosPrincipales } </div>
         </div>
         <div className="products__productCardData">
-            <h5>Nombre del producto</h5>
+            <h5> { producto.nombre } </h5>
             <div className="products__productCardPrice">
                 <small className="products__productCardHighPrice">
-                    $ 180.00
+                    $ { producto.precioBase }
                 </small>
                 <p className="products__productCardLowPrice">
-                    $ 152.00
+                    $ { producto.precioBase - (producto.precioBase * producto.descuento / 100) }
                 </p>
             </div>
         </div>

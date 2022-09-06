@@ -1,5 +1,5 @@
 {
-  "name": "el33admin",
+  "name": "frella",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^12.8.3",
     "dotenv": "^8.2.0",
     "firebase": "^9.5.0",
-    "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-modal": "^3.15.1",
@@ -17,6 +16,7 @@
     "react-scripts": "4.0.3",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "sass": "^1.54.8",
     "sweetalert2": "^11.4.29",
     "web-vitals": "^1.1.2"
   },
