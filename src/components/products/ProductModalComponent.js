@@ -70,10 +70,18 @@ export const ProductModalComponent = () => {
             setUSO( uso.find( item => item.id === productSelected.tipoProducto ).data.descripcion );
             setCUIDADOS( cuidados.find( item => item.id === productSelected.tipoProducto ).data.descripcion );
 
-            const list = ingredientes.filter( item =>  item.id === productSelected.ingredientes.find( ingr => ingr === item.id )); 
+            // const list = ingredientes.filter( item =>  item.id === productSelected.ingredientes.find( ingr => ingr === item.id )); 
+
+            setLISTINGREDIENTS([ productSelected.ingredientes ]);
+
+            // productSelected.ingredientes.forEach( item => {
+            //     const INGREDIENTE = ingredientes.find( ingr => ingr.id === item);
+
+            //     console.log('ING : ', INGREDIENTE)
+
+            //     setLISTINGREDIENTS([...LISTINGREDIENTS, INGREDIENTE]);
+            // })
             
-                setLISTINGREDIENTS( list );
-                console.log( "la lista  : ", LISTINGREDIENTS )
         }
     }, [openModal, ingredientes, productSelected, cuidados, uso])
 
@@ -149,12 +157,41 @@ export const ProductModalComponent = () => {
                         </button>
                         </h2>
                         <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div className="accordion-body product__ModalAccordionBody">
-                            {
-                                // LISTINGREDIENTS.id.slice(0, -1)
-                                // console.log("putaaa : ", LISTINGREDIENTS.id)
-                            }
-                        </div>
+                            <div className="accordion-body product__ModalAccordionBody">
+                                {
+                                    // LISTINGREDIENTS.id.slice(0, -1)
+                                    // console.log("putaaa : ", LISTINGREDIENTS);
+                                        productSelected.ingredientes?.map( ( ing, idx ) => {
+                                            
+                                            const INGRED = ingredientes.find( ingf => ingf.id === ing );
+
+                                            var funcionIng = "";
+                                            switch ( productSelected.tipoProducto ){
+                                                case "jabon":
+                                                    funcionIng = INGRED.data?.piel;
+                                                    break;
+                                                case "shampoo":
+                                                    funcionIng = INGRED.data?.cabello;
+                                                    break;
+                                                case "aceite":
+                                                    funcionIng = INGRED.data?.olor;
+                                                    break;
+                                                default:
+                                                    funcionIng = "";
+
+                                            }
+
+                                            const HTML = <div key={idx}>
+                                                <p> { INGRED.data.nombre } : { funcionIng } </p>
+                                            </div>;
+        
+                                            return HTML;
+                                            
+                                        })
+
+                                    
+                                }
+                            </div>
                         </div>
                     </div>
                     <div className="accordion-item product__ModalAccordionItem">
