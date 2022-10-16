@@ -2,6 +2,7 @@ import { types } from "../types/types";
 
 const initialState = {
     productos: [],
+    prodToPurchase: [],
     openModal: false,
     productSelected: {},
     uso: [],
@@ -51,6 +52,24 @@ export const productReducer = ( state = initialState, action ) => {
             return {
                 ...state,
                 ingredientes: action.payload
+            }
+
+        case types.productToPurchaseAdd:
+            return {
+                ...state,
+                prodToPurchase: [...state.prodToPurchase, action.payload]
+            }
+        case types.productToPurchaseEdit:
+            return {
+                ...state,
+                prodToPurchase:state.prodToPurchase.map(
+                    prod => (prod.id === action.payload.id) ? action.payload : prod
+                )
+            }
+        case types.productToPurchaseRemove:
+            return {
+                ...state,
+                prodToPurchase: state.prodToPurchase.filter( product => product.id !== action.payload )
             }
     
         default:

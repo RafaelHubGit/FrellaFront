@@ -66,6 +66,52 @@ export const productSelected = ( data ) => ({
     payload: data
 });
 
+
+export const addProdToPurchaseStart = ( data ) => {
+    return ( dispatch, getState ) => {
+
+        Swal.showLoading();
+        const prods = getState().product.prodToPurchase;
+        if ( prods.find( p => p.id === data.id) === undefined ){
+            dispatch( addProdToPurchase( data ) );
+        } else {
+            dispatch( editProdTopurchase( data ) );
+        }
+        Swal.close();
+
+        // Swal.fire({
+        //     position: 'top-end',
+        //     icon: 'success',
+        //     title: 'El producto fue agregado al carrito de compra.',
+        //     showConfirmButton: false,
+        //     timer: 1500
+        // })
+
+    }
+}
+export const removeProdToPurchaseStart = ( data ) => {
+    return ( dispatch ) => {
+        Swal.showLoading();
+        dispatch( removeProdToPurchase( data ) );
+        Swal.close();
+    }
+}
+
+export const addProdToPurchase = ( data ) => ({
+    type: types.productToPurchaseAdd,
+    payload: data
+});
+
+export const editProdTopurchase = ( data ) => ({
+    type: types.productToPurchaseEdit,
+    payload: data
+});
+
+export const removeProdToPurchase = ( data ) => ({
+    type: types.productToPurchaseRemove,
+    payload: data
+})
+
 // export const startRegisterWithEmailPasswordName = ( email, password, name ) => {
 //     return ( dispatch ) => {
 //         createUserWithEmailAndPassword( auth, email, password )

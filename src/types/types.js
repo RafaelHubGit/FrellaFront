@@ -12,6 +12,11 @@ export const types = {
     productOpenModal: '[Product] Open Modal Product',
     productCloseModal: '[Product] Close Modal Product',
     productSelected: '[Product] Product Selected',
+    
+    productToPurchaseAdd: '[Product] Add Product to Purchase',
+    productToPurchaseRemove: '[Product] Remove Product to Purchase',
+    productToPurchaseEdit: '[Product] Edit Product to Purchase',
+
     loadUso: '[Product] Load Uso',
     loadCuidados: '[Product] Load Cuidados',
     loadIngredientes: '[Product] Load Ingredientes',

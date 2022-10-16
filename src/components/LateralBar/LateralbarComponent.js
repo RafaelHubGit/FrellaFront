@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { LoginRegisterModal } from '../loginRegister/LoginRegisterModal'
 import { LogoComponent } from '../Logo/LogoComponent'
 import { MenuComponent } from '../menu/MenuComponent'
 
 export const LateralbarComponent = () => {
+
+    const { prodToPurchase } = useSelector( state => state.product );
 
     const [openModal, setOpenModal] = useState( false );
 
@@ -35,17 +39,21 @@ export const LateralbarComponent = () => {
                     </p>
                 </div>
 
-                <div className="lateralbar__iconTextContainer">
+                <Link to="/purchase" className="lateralbar__iconTextContainer">
                     <div className="lateralbar__iconTextContainerNumber colorTextPrimary">
-                        120
+                        {
+                            prodToPurchase.reduce( (acc, p) => acc + p.cantidad, 0 )
+                        }
                     </div>
                     <span className="material-icons iconSize-25 colorTextPrimary pointer">
                         shopping_bag
                     </span>
                     <p className="colorTextPrimary pointer">
-                        $ 80358.00
+                        $ {
+                            prodToPurchase.reduce( (acc, p) => acc + (p.cantidad * p.precio), 0 )
+                        }
                     </p>
-                </div>
+                </Link>
             </div>
 
 
